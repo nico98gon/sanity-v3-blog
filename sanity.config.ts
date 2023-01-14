@@ -5,6 +5,7 @@ import { schemaTypes } from './schemas';
 import { myTheme } from './theme';
 import { StudioNavBar } from './components/StudioNavBar';
 import Logo from './components/Logo';
+import { getDefaultDocumentNode } from './structer';
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
@@ -15,9 +16,13 @@ export default defineConfig({
   title: 'PAPAFAM Content Studio',
   projectId,
   dataset,
-  plugins: [deskTool(), visionTool()],
-  schema: {
-    types: schemaTypes,
+  plugins: 
+    [deskTool({
+      defaultDocumentNode: getDefaultDocumentNode,
+    }),
+    visionTool()],
+      schema: {
+      types: schemaTypes,
   },
   studio: {
     components: {
