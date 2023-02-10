@@ -12,6 +12,23 @@ type Props = {
     };
 };
 
+export const revalidate = 30; //* revalidate this page every 30 seconds
+
+//* this allow to generate static pages
+export async function generateStaticParams() {
+    const query = groq`*[_type=='post']
+    {
+        slug
+    }`;
+
+    const slugs = await client.fetch(query);
+    const slugRoutes = slugs.map((slug: any) => slug.slug.current);
+
+    return ( slugRoutes.map((slug: any) => ({
+        slug,
+    })) );
+}
+
 export default async function Post({ params: {slug}}: Props) {
     const query = groq`
         *[_type=='post' && slug.current == $slug][0]
@@ -39,12 +56,12 @@ export default async function Post({ params: {slug}}: Props) {
                         />
                     </div>
 
-                    <section className="p-5 bg-[#F7AB0A] w-full">
+                    <section className="p-5 bg-Nicode-rose w-full">
                         <div className="flex flex-col md:flex-row justify-between gap-y-5">
                             <div>
-                                <h1 className="text-4xl font-extrabold">{post.title}</h1>
+                                <h1 className="text-4xl font-extrabold text-gray-900">{post.title}</h1>
                                 
-                                <p>
+                                <p className="text-gray-900">
                                     {new Date(post._createAt).toLocaleDateString("en-US", {
                                         day: "numeric",
                                         month: "long",
@@ -62,19 +79,19 @@ export default async function Post({ params: {slug}}: Props) {
                                 />
 
                                 <div className="w-64">
-                                    <h3 className="text-lg font-bold">{post.author.name}</h3>
+                                    <h3 className="text-lg font-bold text-gray-900">{post.author.name}</h3>
                                     <div>{/* TODO: Author BIO */}</div>
                                 </div>
                             </div>
                         </div>
 
                         <div>
-                            <h2 className="italic pt-10">{post.description}</h2>
+                            <h2 className="italic pt-10 text-gray-900">{post.description}</h2>
                             <div className="flex items-center justify-end mt-auto space-x-2 bg-gray-800">
                                 {post.categories.map((category: any) => (
                                     <p 
                                         key={category._id} 
-                                        className="bg-gray-800 text-white px-3 py-1 rounded-full text-sm font-semibold mt-4"
+                                        className="bg-gray-800 px-3 py-1 rounded-full text-sm font-semibold mt-4 text-gray-900"
                                     >
                                         {category.title}
                                     </p>

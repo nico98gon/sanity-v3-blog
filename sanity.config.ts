@@ -12,8 +12,8 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 
 export default defineConfig({
   basePath: "/studio",
-  name: 'PAPFAM_Content_Studio',
-  title: 'PAPAFAM Content Studio',
+  name: 'Nicode_Studio',
+  title: 'Nicode Studio',
   projectId,
   dataset,
   plugins: 

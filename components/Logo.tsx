@@ -1,4 +1,5 @@
 import Image from "next/image";
+import logoImage from "./../assets/img/LogoNicommit.jpg";
 
 export default function Logo( props: any ) {
     const { renderDefault, title } = props;
@@ -9,7 +10,7 @@ export default function Logo( props: any ) {
                 className="rounded-full object-cover"
                 height={50}
                 width={50}
-                src="https://links.papareact.com/1m8" 
+                src={logoImage}
                 alt="logo"
             />
                 <>{renderDefault(props)}</>
