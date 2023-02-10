@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'Nicode-rose': '#D42C6D',
+        'Nicode-rose': '#D42C58',
       },
     },
   },
