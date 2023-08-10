@@ -56,7 +56,7 @@ export default async function Post({ params: {slug}}: Props) {
                         />
                     </div>
 
-                    <section className="p-5 bg-Nicode-rose w-full">
+                    <section className="p-5 bg-Blogeate-rose w-full">
                         <div className="flex flex-col md:flex-row justify-between gap-y-5">
                             <div>
                                 <h1 className="text-4xl font-extrabold text-gray-900">{post.title}</h1>

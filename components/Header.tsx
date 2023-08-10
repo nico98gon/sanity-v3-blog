@@ -15,7 +15,7 @@ export default function Header() {
                         alt="logo"
                     />
                 </Link>
-                <h1 className="text-3xl text-Nicode-rose">Nicode</h1>
+                <h1 className="text-3xl text-Blogeate-rose">Blogeate</h1>
             </div>
 
             <div></div>

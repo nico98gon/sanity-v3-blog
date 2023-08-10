@@ -12,7 +12,7 @@ export default function BlogList({posts}: Props) {
     // console.log(posts.length);
     return (
         <div>
-            <hr className="border-Nicode-rose mb-10"/>
+            <hr className="border-Blogeate-rose mb-10"/>
             <div className="grid grid-cols-1 md:grid-cols-2 px-10 gap-10 gap-y-16 pb-24">
                 {/* {posts} */}
                 {posts.map(post => (
@@ -45,7 +45,7 @@ export default function BlogList({posts}: Props) {
                                     { post.categories && post.categories.length > 0 ? (
                                         <div key={post._id} className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center">
                                             {post.categories.map((category) => (
-                                                <div key={category._id} className="bg-Nicode-rose text-center text-gray-900 px-3 py-1 rounded-full text-sm font-semibold">
+                                                <div key={category._id} className="bg-Blogeate-rose text-center text-gray-900 px-3 py-1 rounded-full text-sm font-semibold">
                                                 <p>{category.title}</p>
                                             </div>
                                             ))}

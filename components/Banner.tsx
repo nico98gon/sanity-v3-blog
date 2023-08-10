@@ -7,7 +7,7 @@ export const Banner = () => {
                 <br />
                 <h2 className="mt-5 md:mt-0">
                     Bienvenidos al blog de{" "}
-                    <span className="underline decoration-2 decoration-Nicode-rose">
+                    <span className="underline decoration-2 decoration-Blogeate-rose">
                         nuestra comunidad
                     </span>{" "}
                     favorita de tecnología digital

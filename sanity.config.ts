@@ -12,8 +12,8 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 
 export default defineConfig({
   basePath: "/studio",
-  name: 'Nicode_Studio',
-  title: 'Nicode Studio',
+  name: 'Blogeate_Studio',
+  title: 'Blogeate Studio',
   projectId,
   dataset,
   plugins: 
